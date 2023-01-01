@@ -15,8 +15,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src"
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["vite/client", "@emotion/react/types/css-prop"],
+    "jsxImportSource": "@emotion/react"
   },
-  "include": ["src"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

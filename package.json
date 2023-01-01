@@ -13,11 +13,21 @@
     "fix:stylelint": "stylelint **/*.{css,scss,sass} --fix",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "branch:delete": " git branch --merged|egrep -v '*|develop'|xargs git branch -d"
   },
   "dependencies": {
+    "@emotion/babel-plugin": "^11.10.5",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@emotion/react": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
+    "emotion-reset": "^3.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.41.3",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.6.1",
+    "zod": "^3.20.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "yarn lint:eslint",
@@ -25,7 +35,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
-    "@emotion/react": "^11.10.5",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
@@ -38,6 +47,7 @@
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
+    "@vitejs/plugin-react": "^3.0.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "babel-loader": "^8.3.0",
     "chromatic": "^6.14.0",
