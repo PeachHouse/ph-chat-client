@@ -41,7 +41,11 @@ const globalStyle = css`
     display: none;
   }
 
-  color: ${colors.white};
+  body {
+    color: ${colors.white};
+    background-color: ${colors.primary};
+    height: 100%;
+  }
 `
 
 export const GlobalStyle: FC = () => <Global styles={globalStyle} />

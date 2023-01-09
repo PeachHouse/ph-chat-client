@@ -4,7 +4,7 @@ import { css } from '@emotion/react'
 import { colors } from '@/constants/colors'
 import { Form, InputField } from '@/components/functional/Form'
 import { Button } from '@/components/ui/Button'
-import { signInSchema, Schema } from '@/constants/schema'
+import { signInSchema } from '@/constants/schema'
 import { FiMail } from 'react-icons/all'
 import { RiLockPasswordLine } from 'react-icons/all'
 
@@ -13,11 +13,11 @@ type FormValues = {
   password: string
 }
 
+type SignInSchema = typeof signInSchema
+
 const styles = {
   container: css`
-    background-color: ${colors.primary};
     padding: 40px;
-    height: 100vh;
   `,
   title: css`
     font-size: 24px;
@@ -39,7 +39,7 @@ export const LoginPage: FC = () => {
   return (
     <div css={styles.container}>
       <h2 css={styles.title}>Ph Chat</h2>
-      <Form<FormValues, Schema>
+      <Form<FormValues, SignInSchema>
         schema={signInSchema}
         options={{ mode: 'onBlur' }}
         onSubmit={async (values) => {
@@ -54,6 +54,7 @@ export const LoginPage: FC = () => {
               placeholder='Email Address'
               error={formState.errors.email}
               icon={<FiMail size={25} color='#686d75' />}
+              testId='email'
             />
             <InputField
               type='password'
@@ -61,12 +62,9 @@ export const LoginPage: FC = () => {
               placeholder='Password'
               error={formState.errors.password}
               icon={<RiLockPasswordLine size={25} color='#686d75' />}
+              testId='password'
             />
-            <Button
-              color='primary'
-              size='normal'
-              disabled={!formState.isValid || !formState.isDirty}
-            >
+            <Button color='primary' disabled={!formState.isValid || !formState.isDirty}>
               Sign In
             </Button>
           </div>

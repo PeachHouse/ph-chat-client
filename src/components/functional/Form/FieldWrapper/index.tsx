@@ -2,6 +2,7 @@
 import { FieldError } from 'react-hook-form'
 import { css } from '@emotion/react'
 import { colors } from '@/constants/colors'
+import { FC } from 'react'
 
 type FieldWrapperProps = {
   label?: string
@@ -25,8 +26,7 @@ const styles = {
   `,
 }
 
-export const FieldWrapper = (props: FieldWrapperProps) => {
-  const { error, children } = props
+export const FieldWrapper: FC<FieldWrapperProps> = ({ error, children }) => {
   return (
     <div css={styles.contents}>
       {children}

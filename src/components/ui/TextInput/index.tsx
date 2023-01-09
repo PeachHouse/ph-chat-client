@@ -9,6 +9,7 @@ type TextInputProps = {
   registration?: UseFormRegisterReturn
   placeholder?: string
   icon?: ReactNode
+  testId?: string
 }
 
 const styles = {
@@ -40,6 +41,7 @@ export const TextInput: FC<TextInputProps> = ({
   registration,
   placeholder,
   icon,
+  testId,
 }) => {
   return (
     <div css={styles.container}>
@@ -49,6 +51,7 @@ export const TextInput: FC<TextInputProps> = ({
         type={type}
         placeholder={placeholder}
         autoComplete='off'
+        data-testid={testId}
         {...registration}
       />
     </div>

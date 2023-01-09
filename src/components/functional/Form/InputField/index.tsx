@@ -10,18 +10,13 @@ type InputFieldProps = {
   placeholder?: string
   error?: FieldError
   icon?: ReactNode
+  testId?: string
 }
 
-export const InputField: FC<InputFieldProps> = ({
-  type = 'text',
-  registration,
-  error,
-  placeholder,
-  icon,
-}) => {
+export const InputField: FC<InputFieldProps> = (props) => {
   return (
-    <FieldWrapper error={error}>
-      <TextInput type={type} placeholder={placeholder} registration={registration} icon={icon} />
+    <FieldWrapper error={props.error}>
+      <TextInput {...props} />
     </FieldWrapper>
   )
 }

@@ -5,7 +5,6 @@ import { colors } from '@/constants/colors'
 
 type ButtonProps = {
   color: 'primary'
-  size: 'normal'
   children: ReactNode
   disabled?: boolean
 }
@@ -31,16 +30,8 @@ const buttonStyles = css`
 `
 
 export const Button: FC<ButtonProps> = (props) => {
-  console.log(props, 'props...')
-
   return (
-    <button
-      {...props}
-      css={buttonStyles}
-      data-color={props.color}
-      data-size={props.size}
-      disabled={props.disabled}
-    >
+    <button {...props} css={buttonStyles} data-color={props.color} disabled={props.disabled}>
       {props.children}
     </button>
   )
