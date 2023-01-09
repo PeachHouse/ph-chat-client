@@ -9,7 +9,6 @@
     "plugin:react-hooks/recommended",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:storybook/recommended",
     "prettier"
   ],
@@ -33,6 +32,7 @@
   "rules": {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "react/self-closing-comp": [
       "error",
       {

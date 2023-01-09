@@ -1,8 +1,11 @@
 import { FC } from 'react'
-import './App.css'
+import { AppRoutes } from '@/routes'
+import { AppProvider } from './providers/App'
 
-const App: FC = () => {
-  return <div className='App' />
+export const App: FC = () => {
+  return (
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
+  )
 }
-
-export default App
